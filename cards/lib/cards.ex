@@ -67,4 +67,21 @@ defmodule Cards do
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
+
+  def map_example do
+    # Note that quotes for keys are optional
+    colors = %{primary: "red", secondary: "blue"}
+    %{secondary: _} = colors
+
+    Map.put(colors, :primary, "red")
+    %{colors | primary: "blue"}
+  end
+
+  def keywordlist_example do
+    _colors= [{:primary, "red"}, {:secondary, "green"}]
+    _colors= [primary: "red", primary: "green"]
+    
+    # If Keyword list is last argument, you can remove the square braces
+  end
+
 end
